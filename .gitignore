@@ -1,0 +1,8 @@
+/out/
+/bin/
+*.class
+*.log
+*.jar
+.idea/
+*.iml
+*.class
