@@ -9,6 +9,7 @@ public abstract class Producto {
         this.stock = stock;
     }
 
+<<<<<<< HEAD
     public String getNombre() { return nombre; }
     public double getPrecio() { return precio; }
     public int getStock() { return stock; }
@@ -23,3 +24,20 @@ public abstract class Producto {
         return new Object[]{ nombre, precio, stock, estado };
     }
 }
+=======
+    public String getAlerta() {
+        if (stock == 0) return "AGOTADO";
+        if (stock <= 5) return "REPONER";
+        return "Disponible";
+    }
+
+    public Object[] toRow() {
+        return new Object[]{nombre, String.format("$%.2f", precio), stock, getAlerta()};
+    }
+
+    public String getNombre() { return nombre; }
+    public double getPrecio() { return precio; }
+    public int getStock() { return stock; }
+    public void reducirStock(int cantidad) { stock -= cantidad; }
+}
+>>>>>>> cf72dbc40d68b821e92b5f91da21e635fd7ce732
